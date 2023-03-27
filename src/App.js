@@ -3,7 +3,7 @@ import PetsBlock from './components/PetsBlock';
 import MainBlock from "./components/MainBlock";
 import FooterBlock from './components/Footer';
 import NavigationBlock from './components/Navigation';
-alert('Господа проверяющие, оооочень прошу прощения, проверьте работу 30-ого числа!!! Я усложнила себе жизнь, сделав SPA. К 30-ому всё будет готово :(');
+
 class App {
     constructor(container) {
         return this.init(container)
@@ -41,6 +41,7 @@ class App {
     }
 
     render(container) { //в методе render(){} осуществляется маунтинг компонента
+        alert('Господа проверяющие, оооочень прошу прощения, проверьте работу 30-ого числа!!! Я усложнила себе жизнь, сделав SPA. К 30-ому всё будет готово :(');
         const el = document.createElement('div'); //блок куда будем вставлять всееее элементы
         this.renderNavigation(el);
 
