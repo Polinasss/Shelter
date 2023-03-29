@@ -40,8 +40,7 @@ class MainBlock {
     }
 
     render(container) {
-        const mainContainer = document.createElement('div');
-        mainContainer.classList.add('main');
+        const mainContainer = document.createElement('main');
         this.renderNotOnlyBlock(mainContainer);
         this.renderAboutBlock(mainContainer);
         this.renderOurFriendsBlock(mainContainer);

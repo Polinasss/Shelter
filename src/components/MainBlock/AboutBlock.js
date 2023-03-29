@@ -16,9 +16,6 @@ class AboutBlock {
         const holder = document.createElement('div'); //создали контейнер
         holder.classList.add('container');
 
-        const infoBlockAbout = document.createElement('div'); //блок с информацией
-        infoBlockAbout.classList.add('infoBlockAbout');
-
         const infoBlockText = document.createElement('div'); //текст
         infoBlockText.classList.add('infoBlockAbout__text');
         const h2 = document.createElement('h2');
@@ -39,9 +36,8 @@ class AboutBlock {
         img.src = imgPath;
         infoBlockDogIMG.appendChild(img);
 
-        infoBlockAbout.appendChild(infoBlockText);
-        infoBlockAbout.appendChild(infoBlockDogIMG);
-        holder.appendChild(infoBlockAbout);
+        holder.appendChild(infoBlockDogIMG);
+        holder.appendChild(infoBlockText);
         about.appendChild(holder);
         return about;
     }

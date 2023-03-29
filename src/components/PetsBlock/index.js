@@ -13,8 +13,16 @@ class PetsBlock {
         const pets = document.createElement('div');
         pets.classList.add('pets');
 
+        const div = document.createElement('div');
+        div.classList.add('navBg');
+
         const h1 = document.createElement('h1');
-        h1.innerHTML = "Our friends who are looking for a house" ;
+        h1.innerHTML = "Our friends who" ;
+        const h12 = document.createElement('h1');
+        h12.innerHTML = "are looking for a house";
+        
+        const holder = document.createElement('div'); //создали контейнер
+        holder.classList.add('container');
 
         const paginationList = document.createElement('div');
         paginationList.classList.add('paginationList');
@@ -54,9 +62,12 @@ class PetsBlock {
             paginationList.appendChild(cardElement);
         });
         
+        pets.appendChild(div);
         pets.appendChild(h1);
-        pets.appendChild(paginationList);
-        pets.appendChild(paginationNumbers);
+        pets.appendChild(h12);
+        holder.appendChild(paginationList);
+        holder.appendChild(paginationNumbers);
+        pets.appendChild(holder);
         return pets;
     }
 }

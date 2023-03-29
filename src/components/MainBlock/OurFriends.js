@@ -19,8 +19,10 @@ class OurFriendsBlock {
         const holder = document.createElement('div'); //создали контейнер
         holder.classList.add('container');
 
-        const h2 = document.createElement('h2'); //приветствие
-        h2.innerHTML = "Our friends who are looking for a house";
+        const h21 = document.createElement('h2'); //приветствие 1
+        h21.innerHTML = "Our friends who";
+        const h22 = document.createElement('h2'); //приветствие 2
+        h22.innerHTML = "are looking for a house";
 
         const slider = document.createElement('div'); //блок со слайдером
         slider.classList.add('slider');
@@ -41,6 +43,7 @@ class OurFriendsBlock {
         const getToKnowTheRestBtn = document.createElement('button'); //нижняя кнопка
         getToKnowTheRestBtn.classList.add('getToKnowTheRestBtn');
         getToKnowTheRestBtn.innerHTML = 'Get to know the rest';
+        getToKnowTheRestBtn.addEventListener('click', () => {window.location.hash = '#ourPets'})
 
         slider.appendChild(btnLeft); 
 
@@ -62,7 +65,8 @@ class OurFriendsBlock {
 
         slider.appendChild(btnRight);
 
-        holder.appendChild(h2);
+        holder.appendChild(h21);
+        holder.appendChild(h22);
         holder.appendChild(slider);
         holder.appendChild(getToKnowTheRestBtn);
         ourFriends.appendChild(holder);

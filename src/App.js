@@ -3,7 +3,14 @@ import PetsBlock from './components/PetsBlock';
 import MainBlock from "./components/MainBlock";
 import FooterBlock from './components/Footer';
 import NavigationBlock from './components/Navigation';
+import { arr } from './components/Navigation';
+import { cozyHouse, bostonShelter } from './components/Navigation';
+import favicon from '@assets/favicon.ico';
 
+const link = document.createElement('link');
+link.rel = 'icon';
+link.href = favicon;
+document.head.appendChild(link);
 class App {
     constructor(container) {
         return this.init(container)
@@ -39,19 +46,25 @@ class App {
         };
         return this.render(container);
     }
-
     render(container) { //в методе render(){} осуществляется маунтинг компонента
         const el = document.createElement('div'); //блок куда будем вставлять всееее элементы
         this.renderNavigation(el);
-
+        
         // !!! сделать потом проверку, если document.getElementById('header') и document.getElementById('footer') есть, то не вызывать перерисовку этих компонентов
 
         switch(window.location.hash.slice(1)) {
             case 'aboutTheShelter':
+                arr[0].classList.add('active');
                 this.renderMainBlock(el);
+                cozyHouse.style.color = '#F1CDB3';
+                bostonShelter.style.color = 'white';
                 break;
             case 'ourPets': 
-                this.renderPetsBlock(el); 
+                arr[1].classList.add('active');
+                this.renderPetsBlock(el);
+                arr.forEach((elem) => {elem.classList.add('ourPetsNav')});
+                cozyHouse.style.color = '#545454';
+                bostonShelter.style.color = '#545454';
                 break;
             default:
         }

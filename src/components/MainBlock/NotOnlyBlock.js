@@ -1,4 +1,6 @@
 import imgPath from '@assets/start-screen-puppy';
+import startScreenBackground from '@assets/start-screen-background';
+import startScreenGradient from '@assets/start-screen-gradient';
 
 class NotOnlyBlock {
     constructor() {
@@ -12,12 +14,12 @@ class NotOnlyBlock {
     render() {
         const notOnly = document.createElement('div'); //создали общий див секции
         notOnly.classList.add('not-only');
+        notOnly.style.background = `url(${startScreenGradient}), url(${startScreenBackground})`;
+        notOnly.style.backgroundRepeat = 'no-repeat';
+        notOnly.style.backgroundSize = 'cover';
 
         const holder = document.createElement('div'); //создали контейнер
         holder.classList.add('container');
-
-        const infoBlockNotOnly = document.createElement('div'); //блок с информацией
-        infoBlockNotOnly.classList.add('infoBlockNotOnly');
 
         const infoBlockText = document.createElement('div'); //текст
         infoBlockText.classList.add('infoBlock__text');
@@ -38,9 +40,8 @@ class NotOnlyBlock {
         img.src = imgPath;
         infoBlockDogIMG.appendChild(img);
 
-        infoBlockNotOnly.appendChild(infoBlockText);
-        infoBlockNotOnly.appendChild(infoBlockDogIMG);
-        holder.appendChild(infoBlockNotOnly);
+        holder.appendChild(infoBlockText);
+        holder.appendChild(infoBlockDogIMG);
         notOnly.appendChild(holder);
         return notOnly;
     }

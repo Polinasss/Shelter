@@ -17,9 +17,6 @@ class InAddition {
         const holder = document.createElement('div'); //создали контейнер
         holder.classList.add('container');
 
-        const infoBlockInAddition = document.createElement('div'); //блок с информацией
-        infoBlockInAddition.classList.add('infoBlockInAddition');
-
         const infoBlockDogIMG = document.createElement('div'); //картинка
         infoBlockDogIMG.classList.add('infoBlockInAddition__img');
         const img = document.createElement('img');
@@ -49,9 +46,8 @@ class InAddition {
         infoBlockText.appendChild(p1);
         infoBlockText.appendChild(creditCard);
         infoBlockText.appendChild(p2);
-        infoBlockInAddition.appendChild(infoBlockDogIMG);
-        infoBlockInAddition.appendChild(infoBlockText);
-        holder.appendChild(infoBlockInAddition);
+        holder.appendChild(infoBlockDogIMG);
+        holder.appendChild(infoBlockText);
         inAddition.appendChild(holder);
         return inAddition;
     }
